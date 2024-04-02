@@ -1,7 +1,16 @@
 package com.bezkoder.spring.restapi.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Tutorial {
-  private long id = 0;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
   private String title;
 
@@ -22,7 +31,7 @@ public class Tutorial {
   public void setId(long id) {
     this.id = id;
   }
-  
+
   public long getId() {
     return id;
   }
